@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WatchmenApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body class="bg-gradient-primary">
+    <% if user_signed_in? %>
+      <body id="page-top">
+      <div id="wrapper">
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= render 'assets/sidebar' %>
+    <% end %>
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <% if user_signed_in? %>
+          <%= render 'assets/navbar' %>
+        <% end %>
+        <div class="container-fluid">
+          <%= render 'assets/alert' %>
+          <%= yield %>
+          <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

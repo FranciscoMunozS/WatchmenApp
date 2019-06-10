@@ -1,0 +1,25 @@
+<%= simple_form_for(@provider) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="form-label-group"></div>
+    <%= f.input :rut, input_html: { id: "input" }, hint: 'Ingrese el RUT sin puntos ni guion' %>
+
+    <%= f.input :socialreason %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :address  %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :phone %>
+      </div>
+    </div>
+    <%= f.input :contact %>
+    <%= f.input :item %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary btn-sm' %>
+  </div>
+<% end %>
