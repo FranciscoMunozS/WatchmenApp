@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_10_195009) do
+ActiveRecord::Schema.define(version: 2019_06_11_191128) do
+
+  create_table "banks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
+
+  create_table "charges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "documents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "providers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "socialreason"
+    t.string "name"
     t.string "address"
     t.string "phone"
     t.string "contact"
@@ -22,6 +41,37 @@ ActiveRecord::Schema.define(version: 2019_06_10_195009) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "rut"
+  end
+
+  create_table "states", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
+
+  create_table "tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "correlative"
+    t.integer "memo"
+    t.date "memo_income_date"
+    t.integer "ticket_number"
+    t.bigint "amount"
+    t.string "currency"
+    t.date "due_date"
+    t.string "caution"
+    t.string "project_name"
+    t.string "bip"
+    t.string "departed_office"
+    t.date "departed_date"
+    t.string "analist"
+    t.string "devolution"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "provider_id"
+    t.integer "bank_id"
+    t.integer "state_id"
+    t.integer "document_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

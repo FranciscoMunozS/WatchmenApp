@@ -29,14 +29,13 @@
         <% @providers.each do |provider| %>
           <tr>
             <td><%= provider.rut %></td>
-            <td><%= provider.socialreason %></td>
+            <td><%= provider.name %></td>
             <td><%= provider.address %></td>
             <td><%= provider.phone %></td>
             <td><%= provider.contact %></td>
             <td><%= provider.item %></td>
             <td>
-              <%= link_to provider, class: 'btn btn-primary btn-sm' do %>
-              <% end %>
+              <%= link_to 'Ver', provider, class: 'btn btn-primary btn-sm' %>
               <%= link_to 'Editar', edit_provider_path(provider), class: 'btn btn-success btn-sm' %>
               <%= link_to 'Eliminar', provider, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-danger btn-sm' %>
             </td>

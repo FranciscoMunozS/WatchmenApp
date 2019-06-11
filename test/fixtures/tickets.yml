@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  correlative: 1
+  memo: 1
+  memo_income_date: 2019-06-11
+  ticket_number: 1
+  amount: 
+  currency: MyString
+  due_date: 2019-06-11
+  caution: MyString
+  project_name: MyString
+  bip: MyString
+  departed_office: MyString
+  departed_date: MyString
+  analist: MyString
+  devolution: MyString
+
+two:
+  correlative: 1
+  memo: 1
+  memo_income_date: 2019-06-11
+  ticket_number: 1
+  amount: 
+  currency: MyString
+  due_date: 2019-06-11
+  caution: MyString
+  project_name: MyString
+  bip: MyString
+  departed_office: MyString
+  departed_date: MyString
+  analist: MyString
+  devolution: MyString

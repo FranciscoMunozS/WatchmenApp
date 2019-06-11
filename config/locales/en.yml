@@ -3,11 +3,30 @@ en:
     attributes:
       provider:
         rut: "RUT proveedor"
-        socialreason: "Razon social"
+        name: "Razon social"
         address: "Dirección"
         phone: "Telefono"
         contact: "Contacto"
         item: "Giro"
+      ticket:
+        document: "Tipo de garantia"
+        state: "Estado registro de garantia"
+        bank: "Banco"
+        provider: "Proveedor"
+        correlative: "Numero correlativo"
+        memo: "Memorandum ingreso"
+        memo_income_date: "Fecha memorandum"
+        ticket_number: "Numero boleta de garantia"
+        amount: "Monto"
+        currency: "Moneda"
+        due_date: "Fecha de vencimiento"
+        caution: "Caución"
+        project_name: "Proyecto"
+        bip: "Codigo BIP"
+        departed_office: "Oficio despacho"
+        departed_date: "Fecha despacho"
+        analist: "Analista solicitante"
+        devolution: "Medio de devolución"
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
@@ -228,3 +247,7 @@ en:
       provider:
         create: 'Agregar proveedor'
         update: 'Actualizar datos proveedor'
+    submit:
+      ticket:
+        create: 'Agregar nuevo registro de garantia'
+        create: 'Actualizar datos del registro'

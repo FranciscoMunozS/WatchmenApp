@@ -17,9 +17,14 @@ gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'font-awesome-sass', '~> 5.8', '>= 5.8.1'
+gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :development do

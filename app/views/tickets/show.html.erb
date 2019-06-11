@@ -1,0 +1,72 @@
+<p>
+  <strong>Correlative:</strong>
+  <%= @ticket.correlative %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @ticket.memo %>
+</p>
+
+<p>
+  <strong>Memo income date:</strong>
+  <%= @ticket.memo_income_date %>
+</p>
+
+<p>
+  <strong>Ticket number:</strong>
+  <%= @ticket.ticket_number %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @ticket.amount %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @ticket.currency %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @ticket.due_date %>
+</p>
+
+<p>
+  <strong>Caution:</strong>
+  <%= @ticket.caution %>
+</p>
+
+<p>
+  <strong>Project name:</strong>
+  <%= @ticket.project_name %>
+</p>
+
+<p>
+  <strong>Bip:</strong>
+  <%= @ticket.bip %>
+</p>
+
+<p>
+  <strong>Departed office:</strong>
+  <%= @ticket.departed_office %>
+</p>
+
+<p>
+  <strong>Departed date:</strong>
+  <%= @ticket.departed_date %>
+</p>
+
+<p>
+  <strong>Analist:</strong>
+  <%= @ticket.analist %>
+</p>
+
+<p>
+  <strong>Devolution:</strong>
+  <%= @ticket.devolution %>
+</p>
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>

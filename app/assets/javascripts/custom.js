@@ -1,3 +1,45 @@
+$(document).ready(function(){
+  $("#input").Rut();
+});
+
+$(document).ready(function() {
+  var max_chars = 9;
+
+  $('#input').keydown( function(e){
+      if ($(this).val().length >= max_chars) {
+          $(this).val($(this).val().substr(0, max_chars));
+      }
+  });
+
+  $('#input').keyup( function(e){
+      if ($(this).val().length >= max_chars) {
+          $(this).val($(this).val().substr(0, max_chars));
+      }
+  });
+});
+
+$(document).ready(function(){
+  $("#ticket_provider_id").select2({
+    theme: "bootstrap",
+    language: "es"
+  });
+
+  $("#ticket_bank_id").select2({
+    theme: "bootstrap",
+    language: "es"
+  });
+
+  $("#ticket_state_id").select2({
+    theme: "bootstrap",
+    language: "es"
+  });
+
+  $("#ticket_document_id").select2({
+    theme: "bootstrap",
+    language: "es"
+  });
+});
+
 $(document).ready(function($) {
   "use strict"; // Start of use strict
 

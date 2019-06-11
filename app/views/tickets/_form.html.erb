@@ -1,0 +1,61 @@
+<%= simple_form_for(@ticket) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.association :provider %>
+        <%= link_to 'Agregar proveedor', new_provider_path, class: 'btn btn-success btn-sm' %>
+      </div>
+      <div class="col-md-6">
+        <%= f.association :bank %>
+        <%= link_to 'Agregar banco', new_bank_path, class: 'btn btn-success btn-sm' %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.association :state %>
+      </div>
+      <div class="col-md-6">
+        <%= f.association :document %>
+      </div>
+    </div>
+    <hr>
+    <%= f.input :correlative %>
+    <div class="row">
+      <div class="col-md-8">
+        <%= f.input :memo, as: :string %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :memo_income_date %>
+      </div>
+    </div>
+    <%= f.input :ticket_number %>
+    <%= f.input :amount %>
+    <%= f.input :currency %>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :due_date %>
+      </div>
+    </div>
+    <%= f.input :caution %>
+    <%= f.input :project_name %>
+    <%= f.input :bip %>
+    <div class="row">
+      <div class="col-md-8">
+        <%= f.input :departed_office %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :departed_date %>
+      </div>
+    </div>
+    <%= f.input :analist %>
+    <%= f.input :devolution %>
+  </div>
+  <br>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-success btn-sm' %>
+  </div>
+<% end %>

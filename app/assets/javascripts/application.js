@@ -16,25 +16,6 @@
 //= require bootstrap
 //= require custom
 //= require formatter
+//= require select2-full
 //= require activestorage
 //= require_tree .
-
-$(document).ready(function(){
-  $("#input").Rut();
-});
-
-$(document).ready(function() {
-  var max_chars = 9;
-
-  $('#input').keydown( function(e){
-      if ($(this).val().length >= max_chars) {
-          $(this).val($(this).val().substr(0, max_chars));
-      }
-  });
-
-  $('#input').keyup( function(e){
-      if ($(this).val().length >= max_chars) {
-          $(this).val($(this).val().substr(0, max_chars));
-      }
-  });
-});
