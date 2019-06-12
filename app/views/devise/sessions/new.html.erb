@@ -1,22 +1,37 @@
-<div class="card">
-  <div class="card-body">
-    <h2>Iniciar sesión</h2>
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email,
-                    label: 'Correo electronico',
-                    required: false,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                    label: 'Contraseña',
-                    required: false,
-                    input_html: { autocomplete: "current-password" } %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xl-10 col-lg-12 col-md-9">
+      <div class="card o-hidden border-0 shadow-lag my-5">
+        <div class="card-body p-0">
+          <div class="row">
+            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+            <div class="col-lg-6">
+              <div class="p-5">
+                <div class="text-center">
+                  <h1 class="h4 text-gray-900 mb-4">Inicio de sesión - Bienvenido</h1>
+                </div>
+                <hr>
+                <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <div class="form-group">
+                    <%= f.input :email,
+                                label: 'Correo electronico',
+                                required: false,
+                                autofocus: true,
+                                input_html: { autocomplete: "email" } %>
+                    <%= f.input :password,
+                                label: 'Contraseña',
+                                required: false,
+                                input_html: { autocomplete: "current-password" } %>
+                  </div>
+                  <div class="form-actions">
+                    <%= f.button :submit, "Iniciar sesión", class: 'btn btn-primary btn-block btn-sm' %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, "Iniciar sesión", class: 'btn btn-primary btn-sm' %>
-      </div>
-    <% end %>
+    </div>
   </div>
 </div>

@@ -34,7 +34,7 @@
     </div>
     <div class="row">
       <div class="col-md-8">
-        <%= f.input :ticket_number, as: :string %>
+        <%= f.input :ticket_number %>
       </div>
       <div class="col-md-4">
         <%= f.input :due_date %>
@@ -42,7 +42,7 @@
     </div>
     <div class="row">
       <div class="col-md-8">
-        <%= f.input :amount, as: :string %>
+        <%= f.input :amount %>
       </div>
       <div class="col-md-4">
         <%= f.input :currency %>
@@ -57,6 +57,16 @@
         <%= f.input :bip %>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-8">
+        <%= f.input :departed_office %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :departed_date %>
+      </div>
+    </div>
+    <%= f.input :analist %>
+    <%= f.input :devolution %>
   </div>
   <br>
   <div class="form-actions">

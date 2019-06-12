@@ -29,7 +29,7 @@ class ChargesController < ApplicationController
 
     respond_to do |format|
       if @charge.save
-        format.html { redirect_to @charge, notice: 'Charge was successfully created.' }
+        format.html { redirect_to @charge, notice: 'Cargo creado correctamente.' }
         format.json { render :show, status: :created, location: @charge }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ChargesController < ApplicationController
   def update
     respond_to do |format|
       if @charge.update(charge_params)
-        format.html { redirect_to @charge, notice: 'Charge was successfully updated.' }
+        format.html { redirect_to @charge, notice: 'Cargo actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @charge }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ChargesController < ApplicationController
   def destroy
     @charge.destroy
     respond_to do |format|
-      format.html { redirect_to charges_url, notice: 'Charge was successfully destroyed.' }
+      format.html { redirect_to charges_url, notice: 'Cargo eliminado.' }
       format.json { head :no_content }
     end
   end

@@ -1,6 +1,8 @@
 en:
   activerecord:
     attributes:
+      bank:
+        name: "Nombre banco"
       provider:
         rut: "RUT proveedor"
         name: "Razon social"
@@ -250,4 +252,7 @@ en:
     submit:
       ticket:
         create: 'Agregar nuevo registro de garantia'
-        create: 'Actualizar datos del registro'
+        update: 'Actualizar datos del registro'
+      bank:
+        create: 'Agregar nuevo banco'
+        update: 'Actualizar datos del registro'
