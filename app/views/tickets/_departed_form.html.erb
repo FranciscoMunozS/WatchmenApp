@@ -1,0 +1,21 @@
+<%= simple_form_for(@ticket) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-md-8">
+        <%= f.input :departed_office %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :departed_date, as: :string, input_html: { class: 'datepicker' } %>
+      </div>
+    </div>
+    <%= f.input :analist %>
+    <%= f.input :devolution %>
+  </div>
+  <br>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-success btn-sm' %>
+  </div>
+<% end %>

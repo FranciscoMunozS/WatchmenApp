@@ -2,28 +2,20 @@ class ProvidersController < ApplicationController
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-  # GET /providers
-  # GET /providers.json
   def index
     @providers = Provider.all
   end
 
-  # GET /providers/1
-  # GET /providers/1.json
   def show
   end
 
-  # GET /providers/new
   def new
     @provider = current_user.providers.build
   end
 
-  # GET /providers/1/edit
   def edit
   end
 
-  # POST /providers
-  # POST /providers.json
   def create
     @provider = current_user.providers.build(provider_params)
 
@@ -38,8 +30,6 @@ class ProvidersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /providers/1
-  # PATCH/PUT /providers/1.json
   def update
     respond_to do |format|
       if @provider.update(provider_params)
@@ -52,8 +42,6 @@ class ProvidersController < ApplicationController
     end
   end
 
-  # DELETE /providers/1
-  # DELETE /providers/1.json
   def destroy
     @provider.destroy
     respond_to do |format|
@@ -63,12 +51,10 @@ class ProvidersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_provider
       @provider = Provider.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def provider_params
       params.require(:provider).permit(:rut, :name, :address, :phone, :contact, :item)
     end

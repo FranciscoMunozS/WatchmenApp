@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card mb-4">
+      <div class="card-header">
+        <h6 class="m-0 font-weight-bold text-primary">Datos de despacho</h6>
+      </div>
+      <div class="card-body">
+        <%= render 'departed_form' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card mb-4">
+      <a href="#collapseCardExample" class="card-header" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+        <h6 class="m-0 font-weight-bold text-success">Datos registro de garantía</h6>
+      </a>
+      <div class="collapse show" id="collapseCardExample">
+        <div class="card-body">
+          <%= render 'second_form' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

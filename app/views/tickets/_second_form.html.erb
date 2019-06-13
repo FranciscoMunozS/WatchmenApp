@@ -1,75 +1,58 @@
 <%= simple_form_for(@ticket) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
   <div class="form-inputs">
     <div class="row">
       <div class="col-md-6">
-        <%= f.association :provider %>
-        <%= link_to 'Agregar proveedor', new_provider_path, class: 'btn btn-primary btn-sm' %>
+        <%= f.association :provider, disabled: true %>
       </div>
       <div class="col-md-6">
-        <%= f.association :bank %>
-        <%= link_to 'Agregar banco', new_bank_path, class: 'btn btn-danger btn-sm' %>
+        <%= f.association :bank, disabled: true %>
       </div>
     </div>
     <hr>
     <div class="row">
       <div class="col-md-6">
-        <%= f.association :state %>
+        <%= f.association :state, disabled: true %>
       </div>
       <div class="col-md-6">
-        <%= f.association :document %>
+        <%= f.association :document, disabled: true %>
       </div>
     </div>
     <hr>
-    <%= f.input :correlative %>
+    <%= f.input :correlative, disabled: true %>
     <div class="row">
       <div class="col-md-8">
-        <%= f.input :memo, as: :string %>
+        <%= f.input :memo, as: :string, disabled: true %>
       </div>
       <div class="col-md-4">
-        <%= f.input :memo_income_date %>
+        <%= f.input :memo_income_date, as: :string, disabled: true %>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
-        <%= f.input :ticket_number %>
+        <%= f.input :ticket_number, disabled: true %>
       </div>
       <div class="col-md-4">
-        <%= f.input :due_date %>
+        <%= f.input :due_date, disabled: true, as: :string %>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
-        <%= f.input :amount %>
+        <%= f.input :amount, disabled: true %>
       </div>
       <div class="col-md-4">
-        <%= f.input :currency %>
+        <%= f.input :currency, disabled: true %>
       </div>
     </div>
-    <%= f.input :caution %>
+    <%= f.input :caution, disabled: true %>
     <div class="row">
       <div class="col-md-6">
-        <%= f.input :project_name %>
+        <%= f.input :project_name, disabled: true %>
       </div>
       <div class="col-md-6">
-        <%= f.input :bip %>
+        <%= f.input :bip, disabled: true %>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-8">
-        <%= f.input :departed_office %>
-      </div>
-      <div class="col-md-4">
-        <%= f.input :departed_date %>
-      </div>
-    </div>
-    <%= f.input :analist %>
-    <%= f.input :devolution %>
-  </div>
-  <br>
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-success btn-sm' %>
   </div>
 <% end %>

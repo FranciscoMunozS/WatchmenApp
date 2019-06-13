@@ -17,5 +17,7 @@
 //= require custom
 //= require formatter
 //= require select2-full
+//= require select2_locale_es
+//= require bootstrap-datepicker
 //= require activestorage
 //= require_tree .

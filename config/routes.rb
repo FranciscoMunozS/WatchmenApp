@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :providers
   resources :dashboard
 
+  get 'complete/:id', to: 'tickets#complete', as: :complete_tickets
+
   root 'dashboard#index'
 end

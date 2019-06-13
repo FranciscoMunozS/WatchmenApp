@@ -1,4 +1,12 @@
 $(document).ready(function(){
+  $('.datepicker').datepicker({
+    format: "dd/mm/yyyy",
+    language: "es",
+    todayHighlight: true
+  });
+});
+
+$(document).ready(function(){
   $("#input").Rut();
 });
 
