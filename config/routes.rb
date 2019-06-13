@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :documents
   devise_for :users
   resources :providers
+  resources :dashboard
 
-  root 'tickets#index'
+  root 'dashboard#index'
 end
