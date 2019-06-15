@@ -1,6 +1,8 @@
-<h1>Editing Ticket</h1>
-
-<%= render 'form', ticket: @ticket %>
-
-<%= link_to 'Show', @ticket %> |
-<%= link_to 'Back', tickets_path %>
+<div class="card shadow mb-4 border-left-success">
+  <div class="card-header">
+    <h6 class="m-0 font-weight-bold text-success">Editar registro de garantia</h6>
+  </div>
+  <div class="card-body">
+    <%= render 'form', ticket: @ticket %>
+  </div>
+</div>

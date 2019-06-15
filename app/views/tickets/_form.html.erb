@@ -5,31 +5,31 @@
   <div class="form-inputs">
     <div class="row">
       <div class="col-md-6">
-        <%= f.association :provider %>
+        <%= f.association :provider, include_blank: false %>
         <%= link_to 'Agregar proveedor', new_provider_path, class: 'btn btn-primary btn-sm' %>
       </div>
       <div class="col-md-6">
-        <%= f.association :bank %>
+        <%= f.association :bank, include_blank: false %>
         <%= link_to 'Agregar banco', new_bank_path, class: 'btn btn-danger btn-sm' %>
       </div>
     </div>
     <hr>
     <div class="row">
       <div class="col-md-6">
-        <%= f.association :state %>
+        <%= f.association :state, include_blank: false %>
       </div>
       <div class="col-md-6">
-        <%= f.association :document %>
+        <%= f.association :document, include_blank: false %>
       </div>
     </div>
     <hr>
-    <%= f.input :correlative %>
+    <%= f.input :correlative, as: :string %>
     <div class="row">
       <div class="col-md-8">
         <%= f.input :memo, as: :string %>
       </div>
       <div class="col-md-4">
-        <%= f.input :memo_income_date, as: :string, value: f.object.try(:strftime,"%m/%d/%Y"), input_html: { class: 'datepicker' } %>
+        <%= f.input :memo_income_date, as: :string, value: @ticket.memo_income_date.try(:strftime, "%d/%m/%Y"), input_html: { class: 'datepicker' } %>
       </div>
     </div>
     <div class="row">
@@ -37,7 +37,7 @@
         <%= f.input :ticket_number, as: :string %>
       </div>
       <div class="col-md-4">
-        <%= f.input :due_date, as: :string, value: f.object.try(:strftime,"%m/%d/%Y"), input_html: { class: 'datepicker' } %>
+        <%= f.input :due_date, as: :string, input_html: { class: 'datepicker' }, value: f.object.try(:strftime,"%d/%m/%Y") %>
       </div>
     </div>
     <div class="row">
