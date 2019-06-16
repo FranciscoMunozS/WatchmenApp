@@ -1,84 +1,90 @@
+<p>
+  <% if @ticket.departed_date.present? %>
+    <%= link_to 'Editar despacho', complete_tickets_path(@ticket), class: 'btn btn-success btn-sm' %>
+  <% else %>
+    <%= link_to 'Generar despacho', complete_tickets_path(@ticket), class: 'btn btn-success btn-sm' %>
+  <% end %>
+</p>
+
 <div class="card shadow mb-4 border-left-success">
   <div class="card-header">
-    <h6 class="m-0 font-weight-bold text-success">Editar registro garantia</h6>
+    <h6 class="m-0 font-weight-bold text-success">Datos garantia N° correlativo <%= @ticket.correlative %> y N° de garantia <%= @ticket.ticket_number %></h6>
   </div>
   <div class="card-body">
-    <p>
-      <% if @ticket.departed_date.present? %>
-        <%= link_to 'Editar despacho', complete_tickets_path(@ticket), class: 'btn btn-success btn-sm' %>
-      <% else %>
-        <%= link_to 'Generar despacho', complete_tickets_path(@ticket), class: 'btn btn-success btn-sm' %>
-      <% end %>
-    </p>
+    <h6 class="m-0 font-weight-bold text-primary">Datos de notificación</h6>
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <p><strong>Fecha 1era notificacion:</strong></p>
+        <p><%= @ticket.first_notification %></p>
+      </div>
+      <div class="col-md-6">
+        <p><strong>Fecha 2da notificacion:</strong></p>
+        <p><%= @ticket.second_notification %></p>
+      </div>
+    </div>
+
+  <h6 class="m-0 font-weight-bold text-primary">Datos del registro de garantia</h6>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <p><strong>Numero de garantia:</strong></p>
+      <p><%= @ticket.ticket_number %></p>
+    </div>
+    <div class="col-md-4">
+      <p><strong>Numero correlativo:</strong> </p>
+      <p><%= @ticket.correlative %></p>
+    </div>
+    <div class="col-md-4">
+      <p><strong>Numero memorandum:</strong></p>
+      <p><%= @ticket.memo %></p>
+    </div>
+    <div class="col-md-4">
+      <p><strong>Fecha memorandum:</strong></p>
+      <p><%= @ticket.memo_income_date %></p>
+    </div>
+    <div class="col-md-12">
+      <p><strong>Monto:</strong></p>
+      <p><%= @ticket.amount %> <%= @ticket.currency %></p>
+    </div>
+    <div class="col-md-12">
+      <p><strong>Fecha vencimiento registro:</strong></p>
+      <p><%= @ticket.due_date %></p>
+    </div>
+    <div class="col-md-12">
+      <p><strong>Caución:</strong></p>
+      <p><%= @ticket.caution %></p>
+
+    </div>
+  </div>
+
+  <h6 class="m-0 font-weight-bold text-primary">Datos del proveedor</h6>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Rut Proveedor:</strong></p>
+      <p><%= @ticket.provider.rut %></p>
+    </div>
+    <div class="col-md-6">
+      <p><strong>Proveedor:</strong></p>
+      <p><%= @ticket.provider.name %></p>
+    </div>
+  </div>
+
+  <h6 class="m-0 font-weight-bold text-primary">Datos del banco</h6>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <p><strong>Banco:</strong></p>
+      <p><%= @ticket.bank.name %></p>
+    </div>
+  </div>
+
+
+
 
     <p>
-      <strong>Fecha 1era notificacion:</strong>
-      <%= @ticket.first_notification %>
-    </p>
-
-    <p>
-      <strong>Fecha 2da notificacion:</strong>
-      <%= @ticket.second_notification %>
-    </p>
-
-    <p>
-      <strong>Rut Proveedor:</strong>
-      <%= @ticket.provider.rut %>
-    </p>
-
-    <p>
-      <strong>Proveedor:</strong>
-      <%= @ticket.provider.name %>
-    </p>
-
-    <p>
-      <strong>Banco:</strong>
-      <%= @ticket.bank.name %>
-    </p>
-
-    <p>
-      <strong>Correlative:</strong>
-      <%= @ticket.correlative %>
-    </p>
-
-    <p>
-      <strong>Memo:</strong>
-      <%= @ticket.memo %>
-    </p>
-
-    <p>
-      <strong>Memo income date:</strong>
-      <%= @ticket.memo_income_date %>
-    </p>
-
-    <p>
-      <strong>Ticket number:</strong>
-      <%= @ticket.ticket_number %>
-    </p>
-
-    <p>
-      <strong>Amount:</strong>
-      <%= @ticket.amount %>
-    </p>
-
-    <p>
-      <strong>Currency:</strong>
-      <%= @ticket.currency %>
-    </p>
-
-    <p>
-      <strong>Due date:</strong>
-      <%= @ticket.due_date %>
-    </p>
-
-    <p>
-      <strong>Caution:</strong>
-      <%= @ticket.caution %>
-    </p>
-
-    <p>
-      <strong>Project name:</strong>
-      <%= @ticket.project_name %>
+      
     </p>
 
     <p>

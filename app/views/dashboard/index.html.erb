@@ -1,3 +1,5 @@
+<h3 class="h3 mb-2 text-gray-800">Inicio sistema registros de garantia</h3>
+<hr>
 <div class="row">
   <div class="col-xl-3 col-md-6 mb-4">
     <div class="card border-left-success shadow h-100 py-2">
@@ -66,15 +68,82 @@
 <div class="row">
   <div class="col-xl-8 col-lg-7">
     <div class="card shadow mb-4">
-      <!-- Card Header - Dropdown -->
       <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Total garantias registradas</h6>
+        <h6 class="m-0 font-weight-bold text-success">Total de garantias registradas en los ultimos 4 meses</h6>
       </div>
-      <!-- Card Body -->
       <div class="card-body">
         <div class="chart-area">
-          <%= line_chart Provider.group_by_day(:created_at).count %>
+          <%= column_chart Provider.group_by_week(:created_at).count, width: "1024px", height: "320px", messages: {empty: "Sin datos"} %>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-7">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Total de proveedores registrados en los ultimos 4 meses</h6>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <%= pie_chart Provider.group_by_month(:created_at).count, width: "480px", height: "320px", messages: {empty: "Sin datos"} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xl-6 col-lg-7">
+    <div class="card shadow mb-4 border-left-danger">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between font-weight-bold text-danger">
+        Bancos
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered text-center" id="dttb">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @banks.each do |bank| %>
+              <tr>
+                <td><%= bank.name %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-6 col-lg-7">
+    <div class="card shadow mb-4 border-left-primary">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between font-weight-bold text-primary">
+        Proveedores
+      </div>
+
+      <div class="card-body">
+        <table class="table table-bordered text-center" id="dttb">
+          <thead>
+            <tr>
+              <th>RUT proveedor</th>
+              <th>Razon social</th>
+              <th>Contacto</th>
+              <th>Giro</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @providers.each do |provider| %>
+              <tr>
+                <td><%= provider.rut %></td>
+                <td><%= provider.name %></td>
+                <td><%= provider.contact %></td>
+                <td><%= provider.item %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

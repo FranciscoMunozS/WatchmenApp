@@ -23,7 +23,12 @@
 @import "font-awesome";
 @import "admin";
 @import "fab";
+@import 'datatables';
+@import 'datatables/dataTables.bootstrap4';
+@import 'datatables/extensions/Responsive/responsive.bootstrap4';
+@import 'datatables/extensions/Buttons/buttons.bootstrap4';
 @import "bootstrap-datepicker3";
+
 
 
 .alert-error {

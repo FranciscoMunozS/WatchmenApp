@@ -21,5 +21,7 @@
 //= require bootstrap-datepicker
 //= require chartkick
 //= require Chart.bundle
+//= require datatables
+//= require datatables/dataTables.bootstrap4
 //= require activestorage
 //= require_tree .
