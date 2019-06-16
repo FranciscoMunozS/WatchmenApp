@@ -19,5 +19,7 @@
 //= require select2-full
 //= require select2_locale_es
 //= require bootstrap-datepicker
+//= require chartkick
+//= require Chart.bundle
 //= require activestorage
 //= require_tree .

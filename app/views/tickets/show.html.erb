@@ -1,73 +1,110 @@
-<%= link_to 'Generar despacho', complete_tickets_path(@ticket), class: 'btn btn-success btn-sm' %>
-<p>
-  <strong>Correlative:</strong>
-  <%= @ticket.correlative %>
-</p>
+<div class="card shadow mb-4 border-left-success">
+  <div class="card-header">
+    <h6 class="m-0 font-weight-bold text-success">Editar registro garantia</h6>
+  </div>
+  <div class="card-body">
+    <p>
+      <% if @ticket.departed_date.present? %>
+        <%= link_to 'Editar despacho', complete_tickets_path(@ticket), class: 'btn btn-success btn-sm' %>
+      <% else %>
+        <%= link_to 'Generar despacho', complete_tickets_path(@ticket), class: 'btn btn-success btn-sm' %>
+      <% end %>
+    </p>
 
-<p>
-  <strong>Memo:</strong>
-  <%= @ticket.memo %>
-</p>
+    <p>
+      <strong>Fecha 1era notificacion:</strong>
+      <%= @ticket.first_notification %>
+    </p>
 
-<p>
-  <strong>Memo income date:</strong>
-  <%= @ticket.memo_income_date %>
-</p>
+    <p>
+      <strong>Fecha 2da notificacion:</strong>
+      <%= @ticket.second_notification %>
+    </p>
 
-<p>
-  <strong>Ticket number:</strong>
-  <%= @ticket.ticket_number %>
-</p>
+    <p>
+      <strong>Rut Proveedor:</strong>
+      <%= @ticket.provider.rut %>
+    </p>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @ticket.amount %>
-</p>
+    <p>
+      <strong>Proveedor:</strong>
+      <%= @ticket.provider.name %>
+    </p>
 
-<p>
-  <strong>Currency:</strong>
-  <%= @ticket.currency %>
-</p>
+    <p>
+      <strong>Banco:</strong>
+      <%= @ticket.bank.name %>
+    </p>
 
-<p>
-  <strong>Due date:</strong>
-  <%= @ticket.due_date %>
-</p>
+    <p>
+      <strong>Correlative:</strong>
+      <%= @ticket.correlative %>
+    </p>
 
-<p>
-  <strong>Caution:</strong>
-  <%= @ticket.caution %>
-</p>
+    <p>
+      <strong>Memo:</strong>
+      <%= @ticket.memo %>
+    </p>
 
-<p>
-  <strong>Project name:</strong>
-  <%= @ticket.project_name %>
-</p>
+    <p>
+      <strong>Memo income date:</strong>
+      <%= @ticket.memo_income_date %>
+    </p>
 
-<p>
-  <strong>Bip:</strong>
-  <%= @ticket.bip %>
-</p>
+    <p>
+      <strong>Ticket number:</strong>
+      <%= @ticket.ticket_number %>
+    </p>
 
-<p>
-  <strong>Departed office:</strong>
-  <%= @ticket.departed_office %>
-</p>
+    <p>
+      <strong>Amount:</strong>
+      <%= @ticket.amount %>
+    </p>
 
-<p>
-  <strong>Departed date:</strong>
-  <%= @ticket.departed_date %>
-</p>
+    <p>
+      <strong>Currency:</strong>
+      <%= @ticket.currency %>
+    </p>
 
-<p>
-  <strong>Analist:</strong>
-  <%= @ticket.analist %>
-</p>
+    <p>
+      <strong>Due date:</strong>
+      <%= @ticket.due_date %>
+    </p>
 
-<p>
-  <strong>Devolution:</strong>
-  <%= @ticket.devolution %>
-</p>
+    <p>
+      <strong>Caution:</strong>
+      <%= @ticket.caution %>
+    </p>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %>
+    <p>
+      <strong>Project name:</strong>
+      <%= @ticket.project_name %>
+    </p>
+
+    <p>
+      <strong>Bip:</strong>
+      <%= @ticket.bip %>
+    </p>
+
+    <p>
+      <strong>Departed office:</strong>
+      <%= @ticket.departed_office %>
+    </p>
+
+    <p>
+      <strong>Departed date:</strong>
+      <%= @ticket.departed_date %>
+    </p>
+
+    <p>
+      <strong>Analist:</strong>
+      <%= @ticket.analist %>
+    </p>
+
+    <p>
+      <strong>Devolution:</strong>
+      <%= @ticket.devolution %>
+    </p>
+
+  </div>
+</div>
