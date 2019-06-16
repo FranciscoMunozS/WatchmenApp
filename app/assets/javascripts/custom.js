@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$( document ).on('turbolinks:load', function() {
   $("#dttb").dataTable({
     language: {
       "sProcessing":    "Procesando...",
@@ -27,7 +27,36 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function(){
+$( document ).on('turbolinks:load', function() {
+  $("#dttb-provider").dataTable({
+    language: {
+      "sProcessing":    "Procesando...",
+      "sLengthMenu":    "Mostrar _MENU_ registros",
+      "sZeroRecords":   "No se encontraron resultados",
+      "sEmptyTable":    "Ningún dato disponible en esta tabla",
+      "sInfo":          "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+      "sInfoEmpty":     "Mostrando registros del 0 al 0 de un total de 0 registros",
+      "sInfoFiltered":  "(filtrado de un total de _MAX_ registros)",
+      "sInfoPostFix":   "",
+      "sSearch":        "Buscar:",
+      "sUrl":           "",
+      "sInfoThousands":  ",",
+      "sLoadingRecords": "Cargando...",
+      "oPaginate": {
+          "sFirst":    "Primero",
+          "sLast":    "Último",
+          "sNext":    "Siguiente",
+          "sPrevious": "Anterior"
+      },
+      "oAria": {
+          "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+          "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+      }
+    }
+  });
+})
+
+$( document ).on('turbolinks:load', function() {
   $('.datepicker').datepicker({
     format: "dd/mm/yyyy",
     language: "es",
@@ -35,11 +64,11 @@ $(document).ready(function(){
   });
 });
 
-$(document).ready(function(){
+$( document ).on('turbolinks:load', function() {
   $("#input").Rut();
 });
 
-$(document).ready(function() {
+$( document ).on('turbolinks:load', function() {
   var max_chars = 9;
 
   $('#input').keydown( function(e){
@@ -55,7 +84,7 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function(){
+$( document ).on('turbolinks:load', function() {
   $("#ticket_provider_id").select2({
     theme: "bootstrap",
     language: "es"
@@ -77,7 +106,7 @@ $(document).ready(function(){
   });
 });
 
-$(document).ready(function($) {
+$( document ).on('turbolinks:load', function() {
   "use strict"; // Start of use strict
 
   // Toggle the side navigation

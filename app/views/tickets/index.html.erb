@@ -37,9 +37,15 @@
             <td><%= ticket.departed_office %></td>
             <td><%= ticket.analist %></td>
             <td>
-              <%= link_to 'Ver', ticket, class: 'btn btn-primary btn-sm' %>
-              <%= link_to 'Editar', edit_ticket_path(ticket), class: 'btn btn-success btn-sm' %>
-              <%= link_to 'Eliminar', ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+              <%= link_to ticket, class: 'btn btn-primary btn-sm' do %>
+                <% icon('fas', 'eye') %>
+              <% end %>
+              <%= link_to edit_ticket_path(ticket), class: 'btn btn-success btn-sm' do %>
+                <% icon('fas', 'edit') %>
+              <% end %>
+              <%= link_to ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do %>
+                <% icon('fas', 'trash-alt') %>
+              <% end %>
             </td>
           </tr>
         <% end %>

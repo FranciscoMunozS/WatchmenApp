@@ -19,19 +19,6 @@ ActiveRecord::Schema.define(version: 2019_06_16_000451) do
     t.integer "user_id"
   end
 
-  create_table "charges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "documents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-  end
-
   create_table "providers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -42,13 +29,6 @@ ActiveRecord::Schema.define(version: 2019_06_16_000451) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "rut"
-  end
-
-  create_table "states", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
   end
 
   create_table "tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -71,8 +51,6 @@ ActiveRecord::Schema.define(version: 2019_06_16_000451) do
     t.integer "user_id"
     t.integer "provider_id"
     t.integer "bank_id"
-    t.integer "state_id"
-    t.integer "document_id"
     t.date "first_notification"
     t.date "second_notification"
   end
