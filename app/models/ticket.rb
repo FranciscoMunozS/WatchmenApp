@@ -1,4 +1,6 @@
 class Ticket < ApplicationRecord
+  extend Enumerize
+  
   before_save :first_notification
   before_save :second_notification
 

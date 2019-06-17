@@ -1,11 +1,3 @@
-<p>
-  <% if @ticket.departed_date.present? %>
-    <%= link_to 'Editar despacho', complete_tickets_path(@ticket), class: 'btn btn-success btn-sm' %>
-  <% else %>
-    <%= link_to 'Generar despacho', complete_tickets_path(@ticket), class: 'btn btn-success btn-sm' %>
-  <% end %>
-</p>
-
 <div class="row">
   <div class="col-md-8">
     <div class="card shadow mb-4 border-left-success">
@@ -81,6 +73,14 @@
             <p><%= @ticket.project_name %></p>
           </div>
         </div>
+        <h6 class="m-0 font-weight-bold text-primary">Opciones</h6>
+        <hr>
+        <%= link_to 'Editar registro', tickets_path(@ticket), class: 'btn btn-primary btn-sm' %>
+        <% if @ticket.departed_date.present? %>
+          <%= link_to 'Editar despacho', complete_tickets_path(@ticket), class: 'btn btn-success btn-sm' %>
+        <% else %>
+          <%= link_to 'Generar despacho', complete_tickets_path(@ticket), class: 'btn btn-success btn-sm' %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -91,7 +91,7 @@
         <h6 class="m-0 font-weight-bold text-success">Datos notificación garantia N° correlativo <%= @ticket.correlative %> y N° de garantia <%= @ticket.ticket_number %></h6>
       </div>
       <div class="card-body">
-        <h6 class="m-0 font-weight-bold text-primary">Datos de notificación</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Datos de notificación vencimiento</h6>
         <hr>
         <div class="row">
           <div class="col-md-6">

@@ -90,6 +90,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    enumerize (2.3.1)
+      activesupport (>= 3.2)
     erubi (1.8.0)
     execjs (2.7.0)
     faker (1.9.3)
@@ -249,6 +251,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise (~> 4.6, >= 4.6.2)
+  enumerize (~> 2.3, >= 2.3.1)
   faker (~> 1.9, >= 1.9.3)
   font-awesome-sass (~> 5.8, >= 5.8.1)
   groupdate (~> 4.1, >= 4.1.2)
