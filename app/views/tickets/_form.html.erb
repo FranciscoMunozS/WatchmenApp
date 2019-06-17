@@ -24,8 +24,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-4">
         <%= f.input :ticket_number, as: :string %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :ticket_type %>
       </div>
       <div class="col-md-4">
         <%= f.input :due_date, as: :string, input_html: { class: 'datepicker' }, value: f.object.try(:strftime,"%d/%m/%Y") %>

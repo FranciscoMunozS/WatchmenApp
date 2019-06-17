@@ -1,6 +1,8 @@
-<h1>Editing Provider</h1>
-
-<%= render 'form', provider: @provider %>
-
-<%= link_to 'Show', @provider %> |
-<%= link_to 'Back', providers_path %>
+<div class="card shadow mb-4 border-left-primary">
+  <div class="card-header">
+    <h6 class="m-0 font-weight-bold text-primary">Editar registro de proveedor</h6>
+  </div>
+  <div class="card-body">
+    <%= render 'form', provider: @provider %>
+  </div>
+</div>

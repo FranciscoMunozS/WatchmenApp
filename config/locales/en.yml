@@ -29,6 +29,7 @@ en:
         departed_date: "Fecha despacho"
         analist: "Analista solicitante"
         devolution: "Medio de devolución"
+        ticket_type: "Tipo documento"
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
@@ -249,7 +250,6 @@ en:
       provider:
         create: 'Agregar proveedor'
         update: 'Actualizar datos proveedor'
-    submit:
       ticket:
         create: 'Agregar nuevo registro de garantia'
         update: 'Actualizar datos del registro'
