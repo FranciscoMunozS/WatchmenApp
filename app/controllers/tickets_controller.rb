@@ -24,6 +24,9 @@ class TicketsController < ApplicationController
 
     respond_to do |format|
       if @ticket.save
+
+        NewRecordJob.set(wait: 10.seconds).perform_later(@ticket)
+
         format.html { redirect_to @ticket, notice: 'Registro creado correctamente.' }
         format.json { render :show, status: :created, location: @ticket }
       else
@@ -34,6 +37,10 @@ class TicketsController < ApplicationController
   end
 
   def update
+
+    SendNotificationJob.set(wait_until: (@ticket.first_notification).to_s).perform_later(@ticket)
+    SendSecondNotificationJob.set(wait_until: (@ticket.second_notification).to_s).perform_later(@ticket)
+
     respond_to do |format|
       if @ticket.update(ticket_params)
         format.html { redirect_to @ticket, notice: 'Registro actualizado correctamente.' }

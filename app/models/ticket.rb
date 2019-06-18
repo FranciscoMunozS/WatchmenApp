@@ -9,6 +9,7 @@ class Ticket < ApplicationRecord
   belongs_to :bank
 
   validates :correlative, presence: true
+  validates :due_date, presence: true
 
   enumerize :state, in: [:vigente, :vencido, :despachado], default: :vigente
 

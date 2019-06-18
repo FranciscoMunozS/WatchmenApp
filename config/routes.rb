@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   get 'complete/:id', to: 'tickets#complete', as: :complete_tickets
 
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, :via => [:get, :post]
+
   root 'dashboard#index'
 end

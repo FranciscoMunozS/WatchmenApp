@@ -23,7 +23,10 @@ gem 'chartkick', '~> 3.2'
 gem 'groupdate', '~> 4.1', '>= 4.1.2'
 gem 'jquery-datatables', '~> 1.10', '>= 1.10.19.1'
 gem 'enumerize', '~> 2.3', '>= 2.3.1'
-
+gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.3'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'delayed_job_web', '~> 1.4', '>= 1.4.3'
+gem 'whenever', '~> 1.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

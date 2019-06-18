@@ -75,7 +75,7 @@
         </div>
         <h6 class="m-0 font-weight-bold text-primary">Opciones</h6>
         <hr>
-        <%= link_to 'Editar registro', tickets_path(@ticket), class: 'btn btn-primary btn-sm' %>
+        <%= link_to 'Editar registro', edit_ticket_path(@ticket), class: 'btn btn-primary btn-sm' %>
         <% if @ticket.departed_date.present? %>
           <%= link_to 'Editar despacho', complete_tickets_path(@ticket), class: 'btn btn-success btn-sm' %>
         <% else %>

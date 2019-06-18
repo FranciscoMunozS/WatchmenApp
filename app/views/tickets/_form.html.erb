@@ -20,7 +20,7 @@
         <%= f.input :memo, as: :string %>
       </div>
       <div class="col-md-4">
-        <%= f.input :memo_income_date, as: :string, value: @ticket.memo_income_date.try(:strftime, "%d/%m/%Y"), input_html: { class: 'datepicker' } %>
+        <%= f.input :memo_income_date, as: :string, value: @ticket.memo_income_date, input_html: { class: 'datepicker' } %>
       </div>
     </div>
     <div class="row">
@@ -31,7 +31,7 @@
         <%= f.input :ticket_type %>
       </div>
       <div class="col-md-4">
-        <%= f.input :due_date, as: :string, input_html: { class: 'datepicker' }, value: f.object.try(:strftime,"%d/%m/%Y") %>
+        <%= f.input :due_date, as: :string, input_html: { class: 'datepicker' } %>
       </div>
     </div>
     <div class="row">
