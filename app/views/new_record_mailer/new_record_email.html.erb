@@ -4,9 +4,21 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hola <%= @ticket.user.email %></h1>
-    <p>
-      Nuevo registro agregado al sistema.
-    </p>
+    <h3>Nuevo registro de garantia agregado en el sistema.</h3>
+    <hr>
+    <p>Estimado <%= @ticket.user.email %>, se informa que se ha incorporado un nuevo registro de garantia al sistema.</p>
+    <p><strong>Detalles:</strong></p>
+    <p>Usuario creador del registro: <%= @ticket.user.email %></p>
+    <p>Numero garantia: <%= @ticket.ticket_number %></p>
+    <p>Tipo garantia: <%= @ticket.ticket_type %></p>
+    <p>Estado: <%= @ticket.state %></p>
+    <p>Numero correlativo: <%= @ticket.correlative %></p>
+    <p>Memorandum ingreso: <%= @ticket.memo %></p>
+    <p>Fecha memorandum: <%= @ticket.memo_income_date %></p>
+    <hr>
+    <p><strong>Detalles notificación:</strong></p>
+    <p>Fecha vencimiento: <%= @ticket.due_date %></p>
+    <p>Fecha notificación primer plazo (30 días): <%= @ticket.first_notification %></p>
+    <p>Fecha notificación segundo plazo (15 días): <%= @ticket.second_notification %></p>
   </body>
 </html>
