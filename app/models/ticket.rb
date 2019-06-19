@@ -28,14 +28,14 @@ class Ticket < ApplicationRecord
 
   def first_call_email
     self.first_call = (first_notification.to_date - Date.today).to_i
-    if self.first_call_changed?
+    if self.correlative_changed?
       SendNotificationJob.set(wait: self.first_call.days).perform_later(self)
     end
   end
 
   def second_call_email
     self.second_call = (second_notification.to_date - Date.today).to_i
-    if self.first_call_changed?
+    if self.correlative_changed?
       SendSecondNotificationJob.set(wait: self.second_call.days).perform_later(self)
     end
   end
