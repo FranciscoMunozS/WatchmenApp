@@ -12,11 +12,11 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require jquery
-//= require popper
-//= require bootstrap
+//= require jquery3
 //= require custom
 //= require formatter
+//= require popper
+//= require bootstrap
 //= require select2-full
 //= require select2_locale_es
 //= require bootstrap-datepicker
