@@ -38,9 +38,6 @@ class TicketsController < ApplicationController
 
   def update
 
-    #SendNotificationJob.set(wait_until: (@ticket.first_notification).to_s).perform_later(@ticket)
-    #SendSecondNotificationJob.set(wait_until: (@ticket.second_notification).to_s).perform_later(@ticket)
-
     respond_to do |format|
       if @ticket.update(ticket_params)
         format.html { redirect_to @ticket, notice: 'Registro actualizado correctamente.' }
