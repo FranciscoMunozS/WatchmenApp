@@ -28,6 +28,11 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'delayed_job_web', '~> 1.4', '>= 1.4.3'
 gem 'whenever', '~> 1.0'
 
+gem 'capistrano', '~> 3.7', '>= 3.7.1'
+gem 'capistrano-rails', '~> 1.2'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rbenv', '~> 2.1'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
