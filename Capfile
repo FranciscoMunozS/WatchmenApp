@@ -5,6 +5,7 @@ require "capistrano/setup"
 require "capistrano/deploy"
 require 'capistrano/rails'
 require 'capistrano/passenger'
+require 'capistrano/delayed_job'
 
 # If you are using rbenv add these lines:
 require 'capistrano/rbenv'
