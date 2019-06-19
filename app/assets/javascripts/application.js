@@ -13,8 +13,6 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery3
-//= require custom
-//= require formatter
 //= require popper
 //= require bootstrap
 //= require select2-full
@@ -24,5 +22,6 @@
 //= require Chart.bundle
 //= require datatables
 //= require datatables/dataTables.bootstrap4
-//= require activestorage
+//= require custom
+//= require formatter
 //= require_tree .
