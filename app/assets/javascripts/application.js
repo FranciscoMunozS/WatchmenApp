@@ -22,6 +22,6 @@
 //= require Chart.bundle
 //= require datatables
 //= require datatables/dataTables.bootstrap4
-//= require custom
 //= require formatter
+//= require custom
 //= require_tree .
