@@ -4,6 +4,9 @@ class Ticket < ApplicationRecord
   before_save :first_notification
   before_save :second_notification
 
+  after_save :send_first_email
+  after_save :send_second_email
+
   before_save :first_call_email
   before_save :second_call_email
 
@@ -28,11 +31,21 @@ class Ticket < ApplicationRecord
 
   def first_call_email
     self.first_call = (first_notification.to_date - Date.today).to_i
-    SendNotificationJob.set(wait: self.first_call.days).perform_later(self)
   end
 
   def second_call_email
     self.second_call = (second_notification.to_date - Date.today).to_i
+  end
+
+  def send_first_email
+    if(self.first_notification.to_date < Date.today)
+      SendNotificationJob.set(wait: 10.seconds).perform_later(self)
+    else
+      SendNotificationJob.set(wait: self.first_call.days).perform_later(self)
+    end
+  end
+
+  def send_second_email
     SendSecondNotificationJob.set(wait: self.second_call.days).perform_later(self)
   end
 end
