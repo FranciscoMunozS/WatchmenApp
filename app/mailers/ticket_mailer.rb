@@ -1,8 +1,8 @@
 class TicketMailer < ApplicationMailer
   default from: "soporte@goredelosrios.cl"
 
-  def ticket_mailer
+  def ticket_mailer(ticket)
     @ticket = ticket
-    mail(to: @ticket.user.email, subject: 'Notificación mensual')
+    mail(to: 'franciscomuniozs@gmail.com', subject: 'Notificación mensual')
   end
 end
