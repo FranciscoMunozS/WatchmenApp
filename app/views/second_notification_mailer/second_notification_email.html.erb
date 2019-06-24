@@ -3,10 +3,84 @@
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
+  <style>
+    body {
+      font-family: Helvetica, arial, sans-serif;
+      font-size: 15px;
+      background: #f6f6f6;
+      padding: 20px;
+    }
+  </style>
   <body>
-    <h1>Hola <%= @ticket.analist %></h1>
-    <p>
-      Segundo correo de notificación por vencimiento en un plazo de 15 dias.
-    </p>
+    <table style="background-color: white; width: 900px; margin-left: auto; margin-right: auto; padding: 40px; border: 1px solid #DDDDDD;">
+      <tbody>
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td style="text-align: center">
+                  <%= image_tag(attachments['opened_email.png'].url, width: 300) %>
+                  <h3 style="font-size: 22px;">Notificación del sistema.</h3>
+                  <p style="font-size: 18px; line-height: 24px;">Estimado <%= @ticket.user.email %>, se informa que el siguiente registro esta a 15 dias de expirar.</p>
+                </td>
+              </tr>
+            </table>
+            <hr>
+            <h3>Detalles:</h3>
+            <table style="display:table; border-collapse: collapse; width: 100%; margin-bottom: 40px;">
+              <thead>
+                <tr>
+                  <th style="text-align: left; font-size: 14px;">Creado por:</th>
+                  <th style="text-align: left; font-size: 14px;">Numero garantia:</th>
+                  <th style="text-align: left; font-size: 14px;">Tipo garantia:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= @ticket.user.email %></td>
+                  <td><%= @ticket.ticket_number %></td>
+                  <td><%= @ticket.ticket_type %></td>
+                </tr>
+              </tbody>
+            </table>
+            <table style="display:table; border-collapse: collapse; width: 100%; margin-bottom: 40px;">
+              <thead>
+                <tr>
+                  <th style="text-align: left; font-size: 14px;">Numero correlativo:</th>
+                  <th style="text-align: left; font-size: 14px;">Memo ingreso:</th>
+                  <th style="text-align: left; font-size: 14px;">Fecha memo:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= @ticket.correlative %></td>
+                  <td><%= @ticket.memo %></td>
+                  <td><%= @ticket.memo_income_date %></td>
+                </tr>
+              </tbody>
+            </table>
+            <hr>
+            <h3>Detalles notificación:</h3>
+            <table style="display:table; border-collapse: collapse; width: 100%; margin-bottom: 40px;">
+              <thead>
+                <tr>
+                  <th style="text-align: left; font-size: 14px;">Fecha vencimiento:</th>
+                  <th style="text-align: left; font-size: 14px;">Fecha notificación (15 días):</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= @ticket.due_date %></td>
+                  <td><%= @ticket.second_notification %></td>
+                </tr>
+              </tbody>
+            </table>
+            <hr>
+            <p style="text-align: center;">Para revisar el registro, haga click en el siguiente enlace: <%= link_to 'Ir al sistema', new_user_session_url %>.</p>
+            <p style="text-align: center;">Gobierno Regional de Los Ríos - 2019</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>

@@ -92,54 +92,42 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xl-6 col-lg-7">
-    <div class="card shadow mb-4 border-left-danger">
-      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between font-weight-bold text-danger">
-        Bancos
+  <div class="col-xl-12 col-lg-12">
+    <div class="card shadow mb-4 border-left-success">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between font-weight-bold text-success">
+        Garantias
       </div>
+
       <div class="card-body">
         <table class="table table-bordered text-center" id="dttb">
           <thead>
             <tr>
-              <th>Nombre</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @banks.each do |bank| %>
-              <tr>
-                <td><%= bank.name %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xl-6 col-lg-7">
-    <div class="card shadow mb-4 border-left-primary">
-      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between font-weight-bold text-primary">
-        Proveedores
-      </div>
-
-      <div class="card-body">
-        <table class="table table-bordered text-center" id="dttb-proveedor">
-          <thead>
-            <tr>
-              <th>RUT proveedor</th>
-              <th>Razon social</th>
-              <th>Contacto</th>
-              <th>Giro</th>
+              <th>Numero correlativo</th>
+              <th>Numero memorandum</th>
+              <th>Numero garantia</th>
+              <th>Proyecto</th>
+              <th>Codigo BIP</th>
+              <th>Oficio despacho</th>
+              <th>Analista</th>
+              <th>Opciones</th>
             </tr>
           </thead>
 
           <tbody>
-            <% @providers.each do |provider| %>
+            <% @tickets.each do |ticket| %>
               <tr>
-                <td><%= provider.rut %></td>
-                <td><%= provider.name %></td>
-                <td><%= provider.contact %></td>
-                <td><%= provider.item %></td>
+                <td><%= ticket.correlative %></td>
+                <td><%= ticket.memo %></td>
+                <td><%= ticket.ticket_number %></td>
+                <td><%= ticket.project_name %></td>
+                <td><%= ticket.bip %></td>
+                <td><%= ticket.departed_office %></td>
+                <td><%= ticket.analist %></td>
+                <td>
+                  <%= link_to ticket, class: 'btn btn-primary btn-sm' do %>
+                    <% icon('fas', 'eye') %>
+                  <% end %>
+                </td>
               </tr>
             <% end %>
           </tbody>
