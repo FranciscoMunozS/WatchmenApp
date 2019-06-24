@@ -3,6 +3,6 @@ class TicketMailer < ApplicationMailer
 
   def ticket_mailer
     @ticket = ticket
-    mail(to: 'franciscomuniozs@gmail.com', subject: 'Notificación mensual')
+    mail(to: @ticket.user.email, subject: 'Notificación mensual')
   end
 end
