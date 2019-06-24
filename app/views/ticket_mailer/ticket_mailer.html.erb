@@ -3,10 +3,59 @@
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
+  <style>
+    body {
+      font-family: Helvetica, arial, sans-serif;
+      font-size: 15px;
+      background: #f6f6f6;
+      padding: 20px;
+    }
+  </style>
   <body>
-    <h1>Hi</h1>
-    <p>
-      Sample mail sent using smtp.
-    </p>
+    <table style="background-color: white; width: 900px; margin-left: auto; margin-right: auto; padding: 40px; border: 1px solid #DDDDDD;">
+      <tbody>
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td>
+                  <h3 style="font-size: 22px;">Notificación sistema registros de garantia.</h3>
+                  <p style="font-size: 18px; line-height: 24px;">Estimado, se informa que los siguientes registros expiran dentro de un mes.</p>
+                </td>
+              </tr>
+            </table>
+            <hr>
+            <h3>Detalles:</h3>
+            <hr>
+            <table style="background-color: white; width: 1200px; margin-left: auto; margin-right: auto; padding: 40px;">
+              <thead style="text-align: center">
+                <tr>
+                  <th>Numero correlativo</th>
+                  <th>Numero garantia</th>
+                  <th>Fecha de vencimiento</th>
+                  <th>Analista</th>
+                </tr>
+              </thead>
+
+              <tbody style="text-align: center">
+                <% @tickets.each do |ticket| %>
+                  <% if ticket.first_notification <= Date.today %>
+                    <tr>
+                      <td><%= ticket.correlative %></td>
+                      <td><%= ticket.ticket_number %></td>
+                      <td><%= ticket.due_date %></td>
+                      <td><%= ticket.analist %></td>
+                    </tr>
+                  <% end %>
+                <% end %>
+              </tbody>
+            </table>
+            <hr>
+            <p style="text-align: center;">Para revisar los registros, haga click en el siguiente enlace: <%= link_to 'Ir al sistema', new_user_session_url %>.</p>
+            <p style="text-align: center;">Gobierno Regional de Los Ríos - 2019</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
