@@ -38,11 +38,7 @@ class Ticket < ApplicationRecord
   end
 
   def send_first_email
-    if(self.first_notification.to_date < Date.today)
-      SendNotificationJob.set(wait: 10.seconds).perform_later(self)
-    else
-      SendNotificationJob.set(wait: self.first_call.days).perform_later(self)
-    end
+    SendNotificationJob.set(wait: self.first_call.days).perform_later(self)
   end
 
   def send_second_email
