@@ -19,6 +19,9 @@
             <table>
               <tr>
                 <td>
+                  <%= image_tag(attachments['mail_box.png'].url, width: 250) %>
+                </td>
+                <td>
                   <h3 style="font-size: 22px;">Notificación sistema registros de garantia.</h3>
                   <p style="font-size: 18px; line-height: 24px;">Estimado, se informa que los siguientes registros expiran dentro de un mes.</p>
                 </td>
@@ -33,6 +36,7 @@
                   <th>Numero correlativo</th>
                   <th>Numero garantia</th>
                   <th>Fecha de vencimiento</th>
+                  <th>Fecha de notificación</th>
                   <th>Analista</th>
                 </tr>
               </thead>
@@ -44,7 +48,16 @@
                       <td><%= ticket.correlative %></td>
                       <td><%= ticket.ticket_number %></td>
                       <td><%= ticket.due_date %></td>
+                      <td><%= ticket.notification_date %></td>
                       <td><%= ticket.analist %></td>
+                    </tr>
+                  <% else %>
+                    <tr>
+                      <td>Sin datos para notificar</td>
+                      <td>Sin datos para notificar</td>
+                      <td>Sin datos para notificar</td>
+                      <td>Sin datos para notificar</td>
+                      <td>Sin datos para notificar</td>
                     </tr>
                   <% end %>
                 <% end %>

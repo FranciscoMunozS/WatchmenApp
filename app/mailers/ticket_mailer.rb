@@ -5,7 +5,7 @@ class TicketMailer < ApplicationMailer
     @user = user
     @tickets = Ticket.all
 
-    attachments.inline["mail_sent.png"] = File.read("#{Rails.root}/app/assets/images/mail_sent.png")
+    attachments.inline["mail_box.png"] = File.read("#{Rails.root}/app/assets/images/mail_box.png")
     @tickets.each do |s|
       @user = s
       mail(to: 'franciscomuniozs@gmail.com', subject: 'Notificación mensual')
