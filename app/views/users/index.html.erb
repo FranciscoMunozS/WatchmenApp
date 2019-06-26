@@ -20,9 +20,9 @@
             <td><%= user.email %></td>
             <td><%= user.created_at.to_date %></td>
             <% if user.admin == true %>
-              <td>Administrador</td>
+              <td><span class="btn btn-outline-primary btn-sm">Administrador</span></td>
             <% else %>
-              <td>Usuario comun</td>
+              <td><span class="btn btn-outline-success btn-sm">Usuario</span></td>
             <% end %>
             <td><%= link_to 'Eliminar usuario', users_path, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-danger' %></td>
           </tr>

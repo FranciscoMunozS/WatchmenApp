@@ -1,6 +1,7 @@
 class BanksController < ApplicationController
   before_action :set_bank, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :authorized_user, only: [:edit, :update, :destroy]
 
   def index
     @banks = Bank.all
@@ -53,6 +54,11 @@ class BanksController < ApplicationController
   private
     def set_bank
       @bank = Bank.find(params[:id])
+    end
+
+    def authorized_user
+      @bank = current_user.banks.find_by(id: params[:id])
+      redirect_to banks_path, notice: "Sin autorización para acceder a este registro" if @bank.nil?
     end
 
     def bank_params

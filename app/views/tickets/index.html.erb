@@ -40,11 +40,20 @@
               <%= link_to ticket, class: 'btn btn-primary btn-sm' do %>
                 <% icon('fas', 'eye') %>
               <% end %>
-              <%= link_to edit_ticket_path(ticket), class: 'btn btn-success btn-sm' do %>
-                <% icon('fas', 'edit') %>
-              <% end %>
-              <%= link_to ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do %>
-                <% icon('fas', 'trash-alt') %>
+              <% if current_user.id == ticket.user_id %>
+                <%= link_to edit_ticket_path(ticket), class: 'btn btn-success btn-sm' do %>
+                  <% icon('fas', 'edit') %>
+                <% end %>
+                <%= link_to ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do %>
+                  <% icon('fas', 'trash-alt') %>
+                <% end %>
+              <% elsif current_user.admin? %>
+                <%= link_to edit_ticket_path(ticket), class: 'btn btn-success btn-sm' do %>
+                  <% icon('fas', 'edit') %>
+                <% end %>
+                <%= link_to ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do %>
+                  <% icon('fas', 'trash-alt') %>
+                <% end %>
               <% end %>
             </td>
           </tr>

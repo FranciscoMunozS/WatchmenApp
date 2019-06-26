@@ -1,5 +1,5 @@
 class TicketMailer < ApplicationMailer
-  default from: "soporte@goredelosrios.cl"
+  default from: "Sistema registro de garantias"
 
   def ticket_mailer(user)
     @user = user

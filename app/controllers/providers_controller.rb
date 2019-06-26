@@ -1,6 +1,7 @@
 class ProvidersController < ApplicationController
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :authorized_user, only: [:edit, :update, :destroy]
 
   def index
     @providers = Provider.all
@@ -53,6 +54,11 @@ class ProvidersController < ApplicationController
   private
     def set_provider
       @provider = Provider.find(params[:id])
+    end
+
+    def authorized_user
+      @provider = current_user.providers.find_by(id: params[:id])
+      redirect_to providers_path, notice: "Sin autorización para acceder a este registro" if @provider.nil?
     end
 
     def provider_params

@@ -1,5 +1,5 @@
 class FirstNotificationMailer < ApplicationMailer
-  default from: "no-reply@goredelosrios.cl"
+  default from: "Sistema registro de garantias"
 
   def first_notification_email(ticket)
     @ticket = ticket

@@ -1,5 +1,5 @@
 class SecondNotificationMailer < ApplicationMailer
-  default from: "soporte@goredelosrios.cl"
+  default from: "Sistema registro de garantias"
 
   def second_notification_email(ticket)
     @ticket = ticket

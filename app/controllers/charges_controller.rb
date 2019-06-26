@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
   before_action :set_charge, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :authorized_user, only: [:edit, :update, :destroy]
 
   def index
     @charges = Charge.all
@@ -53,6 +54,11 @@ class ChargesController < ApplicationController
   private
     def set_charge
       @charge = Charge.find(params[:id])
+    end
+
+    def authorized_user
+      @charge = current_user.charges.find_by(id: params[:id])
+      redirect_to charges_path, notice: "Sin autorización para acceder a este registro" if @charge.nil?
     end
 
     def charge_params
