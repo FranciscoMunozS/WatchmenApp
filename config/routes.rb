@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :providers
   resources :dashboard
+  resources :users, only: [:index]
 
   default_url_options :host => "http://localhost:3000"
 

@@ -1,6 +1,10 @@
 en:
   activerecord:
     attributes:
+      user:
+        admin:
+          true: "Si"
+          false: "No"
       bank:
         name: "Nombre banco"
       provider:

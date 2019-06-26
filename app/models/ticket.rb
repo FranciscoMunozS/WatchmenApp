@@ -17,7 +17,7 @@ class Ticket < ApplicationRecord
   validates :correlative, presence: true
   validates :due_date, presence: true
 
-  enumerize :state, in: [:vigente, :vencido, :despachado], default: :vigente
+  enumerize :state, in: { :vigente => 1, :vencido => 2, :despachado => 3}, default: 1
 
   enumerize :ticket_type, in: [:garantia, :vale_vista], default: :garantia
 
