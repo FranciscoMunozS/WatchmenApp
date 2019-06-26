@@ -43,7 +43,7 @@
 
               <tbody style="text-align: center">
                 <% @tickets.each do |ticket| %>
-                  <% if ticket.first_notification.month == Date.today.month %>
+                  <% if ticket.first_notification.month <= Date.today.month %>
                     <tr>
                       <td><%= ticket.correlative %></td>
                       <td><%= ticket.ticket_number %></td>
