@@ -1,7 +1,6 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy, :complete]
   before_action :authenticate_user!
-  before_action :authorized_user, only: [:edit, :update, :destroy, :complete] 
 
 
   def index
@@ -61,11 +60,6 @@ class TicketsController < ApplicationController
   private
     def set_ticket
       @ticket = Ticket.find(params[:id])
-    end
-
-    def authorized_user
-      @ticket = current_user.tickets.find_by(id: params[:id])
-      redirect_to tickets_path, notice: "Sin autorización para acceder a este registro" if @ticket.nil?
     end
 
     def ticket_params

@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
-set :application, "my_app_name"
+set :application, "WatchmenApp"
 set :repo_url, "git@github.com:FranciscoMunozS/WatchmenApp.git"
 
 set :deploy_to, '/home/deploy/WatchmenApp'
