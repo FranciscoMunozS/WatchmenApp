@@ -7,11 +7,6 @@ class ProvidersController < ApplicationController
     @providers = Provider.all
   end
 
-  def import
-    Provider.import(params[:file])
-    redirect_to providers_path, notice: 'Proveedores agregados correctamente'
-  end
-
   def show
   end
 
