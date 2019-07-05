@@ -3,11 +3,7 @@ Rails.application.routes.draw do
   resources :banks
   resources :charges
   devise_for :users
-
-  resources :providers do
-    collection { post :import }
-  end
-  
+  resources :providers
   resources :dashboard
   resources :users, only: [:index]
 
