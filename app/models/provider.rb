@@ -4,4 +4,10 @@ class Provider < ApplicationRecord
 
   validates :rut, presence: true
   validates :name, presence: true
+
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      Provider.create! row.to_hash
+    end
+  end
 end
