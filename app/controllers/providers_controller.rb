@@ -4,7 +4,10 @@ class ProvidersController < ApplicationController
   before_action :authorized_user, only: [:edit, :update, :destroy]
 
   def index
-    @providers = Provider.all
+    respond_to do |format|
+      format.html
+      format.json { render json: ProvidersDatatable.new(view_context) }
+    end
   end
 
   def show
