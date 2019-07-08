@@ -1,27 +1,40 @@
-<p>
-  <strong>Socialreason:</strong>
-  <%= @provider.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @provider.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @provider.phone %>
-</p>
-
-<p>
-  <strong>Contact:</strong>
-  <%= @provider.contact %>
-</p>
-
-<p>
-  <strong>Item:</strong>
-  <%= @provider.item %>
-</p>
-
-<%= link_to 'Edit', edit_provider_path(@provider) %> |
-<%= link_to 'Back', providers_path %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card shadow mb-4 border-left-primary">
+      <div class="card-header">
+        <h6 class="m-0 font-weight-bold text-primary">Datos proveedor - <%= @provider.name %></h6>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <p><strong>Razon social:</strong></p>
+            <p><%= @provider.name %></p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Dirección:</strong></p>
+            <p><%= @provider.address %></p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-4">
+            <p><strong>Telefono:</strong></p>
+            <p><%= @provider.phone %></p>
+          </div>
+          <div class="col-md-4">
+            <p><strong>Contacto:</strong></p>
+            <p><%= @provider.contact %></p>
+          </div>
+          <div class="col-md-4">
+            <p><strong>Giro:</strong></p>
+            <p><%= @provider.item %></p>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <%= link_to 'Editar', edit_provider_path(@provider), class: 'btn btn-primary btn-sm' %>
+        <%= link_to 'Cancelar', providers_path, class: 'btn btn-secondary btn-sm' %>
+      </div>
+    </div>
+  </div>
+</div>

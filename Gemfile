@@ -35,7 +35,6 @@ gem 'rails-assets-jquery', source: 'https://rails-assets.org'
 gem 'rails-assets-datatables', source: 'https://rails-assets.org'
 gem 'kaminari'
 
-
 group :development, :test do
   gem 'figaro', '~> 1.1', '>= 1.1.1'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
