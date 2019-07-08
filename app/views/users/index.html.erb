@@ -1,5 +1,13 @@
-<div class="card shadow mb-4 border-left-success">
-  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between font-weight-bold text-success">
+<div class="row">
+  <div class="col-md-6 text-left">
+    <%= link_to 'Nuevo usuario', new_user_path, class: 'btn btn-primary btn-sm' %>
+  </div>
+</div>
+
+<br>
+
+<div class="card shadow mb-4 border-left-primary">
+  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between font-weight-bold text-primary">
     Usuarios
   </div>
 
@@ -21,10 +29,15 @@
             <td><%= user.created_at.to_date %></td>
             <% if user.has_role? :admin %>
               <td><span class="btn btn-outline-primary btn-sm">Administrador</span></td>
+            <% elsif user.has_role? :editor %>
+              <td><span class="btn btn-outline-success btn-sm">Editor</span></td>
             <% else %>
-              <td><span class="btn btn-outline-success btn-sm">Usuario</span></td>
+              <td><span class="btn btn-outline-info btn-sm">Usuario</span></td>
             <% end %>
-            <td><%= link_to 'Eliminar usuario', users_path, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-danger' %></td>
+            <td>
+              <%= link_to 'Editar', edit_user_path(user), class: 'btn btn-success btn-sm' %>
+              <%= link_to 'Eliminar', users_path, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-danger' %>
+            </td>
           </tr>
         <% end %>
       </tbody>

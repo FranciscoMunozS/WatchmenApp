@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   resources :banks
   resources :charges
   devise_for :users
+  scope '/admin' do
+    resources :users
+  end
   resources :providers
   resources :dashboard
-  resources :users, only: [:index]
 
   default_url_options :host => "http://localhost:3000"
 

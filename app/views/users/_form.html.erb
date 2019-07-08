@@ -1,0 +1,28 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :email, label: "Correo electronico" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :password, label: "Contraseña" %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :password_confirmation, label: "Confirmar contraseña" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :roles, :as => :select, :collection => Role.all %>
+      </div>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary btn-sm' %>
+  </div>
+<% end %>
