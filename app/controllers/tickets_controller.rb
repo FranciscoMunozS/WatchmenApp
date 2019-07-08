@@ -1,7 +1,7 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy, :complete]
   before_action :authenticate_user!
-
+  load_and_authorize_resource
 
   def index
     @tickets = Ticket.all

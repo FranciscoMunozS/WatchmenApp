@@ -1,4 +1,7 @@
 en:
+  unauthorized:
+    manage:
+      all: "No tiene acceso a este recurso"
   activerecord:
     attributes:
       user:

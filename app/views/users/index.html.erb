@@ -19,7 +19,7 @@
           <tr>
             <td><%= user.email %></td>
             <td><%= user.created_at.to_date %></td>
-            <% if user.admin == true %>
+            <% if user.has_role? :admin %>
               <td><span class="btn btn-outline-primary btn-sm">Administrador</span></td>
             <% else %>
               <td><span class="btn btn-outline-success btn-sm">Usuario</span></td>
