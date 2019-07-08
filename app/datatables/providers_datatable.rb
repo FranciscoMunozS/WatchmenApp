@@ -38,7 +38,7 @@ class ProvidersDatatable < ApplicationDatatable
     end
 
     providers = Provider.order("#{sort_column} #{sort_direction}")
-    providers = Provider.page(page).per(per_page)
+    providers = providers.page(page).per(per_page)
     providers = providers.where(search_string.join(' or '), search: "%#{params[:search][:value]}%")
   end
 

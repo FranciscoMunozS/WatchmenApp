@@ -1,9 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @bank.name %>
-</p>
-
-<%= link_to 'Edit', edit_bank_path(@bank) %> |
-<%= link_to 'Back', banks_path %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card shadow mb-4 border-left-danger">
+      <div class="card-header">
+        <h6 class="m-0 font-weight-bold text-danger">Datos banco - <%= @bank.name %></h6>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <p><strong>Nombre banco:</strong></p>
+            <%= @bank.name %>          
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <%= link_to 'Editar', edit_bank_path(@bank), class: 'btn btn-danger btn-sm' %>
+        <%= link_to 'Cancelar', banks_path, class: 'btn btn-secondary btn-sm' %>
+      </div>
+    </div>
+  </div>
+</div>

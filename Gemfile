@@ -34,6 +34,7 @@ gem 'capistrano3-delayed-job', '~> 1.7', '>= 1.7.6'
 gem 'rails-assets-jquery', source: 'https://rails-assets.org'
 gem 'rails-assets-datatables', source: 'https://rails-assets.org'
 gem 'kaminari'
+gem 'auto_increment', '~> 1.5', '>= 1.5.1'
 
 group :development, :test do
   gem 'figaro', '~> 1.1', '>= 1.1.1'

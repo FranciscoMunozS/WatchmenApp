@@ -40,6 +40,26 @@ en:
         restrict_dependent_destroy:
           has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
+  enumerize:
+    ticket:
+      currency:
+        UF: "UF"
+        CLP: "CLP"
+        EUR: "EUR"
+        US: "USD"
+        -: "Sin moneda"
+      ticket_type:
+        GARANTIA: "Boleta de garantia"
+        VALE_VISTA: "Vale vista"
+        LETRA_CAMBIO: "Letra de cambio"
+        CERTIFICADO_PRORROGA: "Certificado de prorroga"
+        CERTIFICADO_FIANZA: "Certificado de fianza"
+        POLIZA_GARANTIA: "Poliza de garantia"
+        PAGARE: "Pagare"
+      devolution:
+        RETIRO: "Retiro personal"
+        RETIRO_CORRESPONDENCIA: "Despacho correspondencia"
+        -: "Sin selección"
   date:
     abbr_day_names:
     - dom
