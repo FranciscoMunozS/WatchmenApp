@@ -8,6 +8,10 @@ en:
         admin:
           true: "Si"
           false: "No"
+          email: "Correo electrónico"
+          password: "Contraseña"
+          password_confirmation: "Confirmación de contraseña"
+          roles: "Roles de usuario"
       bank:
         name: "Nombre banco"
       provider:
@@ -283,3 +287,6 @@ en:
       bank:
         create: 'Agregar nuevo banco'
         update: 'Actualizar datos del registro'
+      user:
+        create: 'Crear usuario'
+        update: 'Actualizar datos de usuarios'

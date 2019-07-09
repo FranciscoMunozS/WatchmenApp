@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource
+  #load_and_authorize_resource
 
   def index
-    @users = User.all
+    @users = User.where.not(:id => current_user.id)
   end
 
   def show
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, :flash => { :success => 'User was successfully created.' }
+      redirect_to @user, :flash => { :success => 'Usuario creado correctamente.' }
     else
       render :action => 'new'
     end
@@ -30,9 +30,12 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
+    params[:user].delete(:password) if params[:user][:password].blank?
+    params[:user].delete(:password_confirmation) if params[:user][:password].blank? and params[:user][:password_confirmation].blank?
+
     if @user.update_attributes(user_params)
       sign_in(@user, :bypass => true) if @user == current_user
-      redirect_to @user, :flash => { :success => 'User was successfully updated.' }
+      redirect_to @user, :flash => { :success => 'Datos de usuario correctamente actualizado.' }
     else
       render :action => 'edit'
     end
@@ -41,7 +44,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path, :flash => { :success => 'User was successfully deleted.' }
+    redirect_to users_path, :flash => { :success => 'Usuario eliminado correctamente.' }
   end
 
   private

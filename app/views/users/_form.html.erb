@@ -10,7 +10,11 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        <%= f.input :password, label: "Contraseña" %>
+        <% if params[:action] == "edit" %>
+          <%= f.input :password, label: "Contraseña", hint: "Dejar en blanco para no realizar modificaciones" %>
+        <% else %>
+          <%= f.input :password, label: "Contraseña" %>
+        <% end %>
       </div>
       <div class="col-md-6">
         <%= f.input :password_confirmation, label: "Confirmar contraseña" %>
@@ -18,11 +22,12 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <%= f.input :roles, :as => :select, :collection => Role.all %>
+        <%= f.association :roles, as: :check_boxes, collection: Role.all, label: "Roles de usuario" %>
       </div>
     </div>
   </div>
   <div class="form-actions">
     <%= f.button :submit, class: 'btn btn-primary btn-sm' %>
+    <%= link_to 'Cancelar', users_path, class: 'btn btn-secondary btn-sm' %>
   </div>
 <% end %>

@@ -16,7 +16,6 @@
       <thead>
         <tr>
           <th>Correo electrónico</th>
-          <th>Fecha creación</th>
           <th>Rol usuario</th>
           <th>Opciones</th>
         </tr>
@@ -26,7 +25,6 @@
         <% @users.each do |user| %>
           <tr>
             <td><%= user.email %></td>
-            <td><%= user.created_at.to_date %></td>
             <% if user.has_role? :admin %>
               <td><span class="btn btn-outline-primary btn-sm">Administrador</span></td>
             <% elsif user.has_role? :editor %>
@@ -35,6 +33,7 @@
               <td><span class="btn btn-outline-info btn-sm">Usuario</span></td>
             <% end %>
             <td>
+              <%= link_to 'Ver', user, class: 'btn btn-primary btn-sm' %>
               <%= link_to 'Editar', edit_user_path(user), class: 'btn btn-success btn-sm' %>
               <%= link_to 'Eliminar', users_path, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-danger' %>
             </td>

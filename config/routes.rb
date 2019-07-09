@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   resources :banks
   resources :charges
   devise_for :users
-  scope '/admin' do
-    resources :users
-  end
+  resources :users
   resources :providers
   resources :dashboard
 

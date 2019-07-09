@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card shadow mb-4 border-left-primary">
+      <div class="card-header">
+        <h6 class="m-0 font-weight-bold text-primary">Datos del usuario</h6>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <p><strong>Correo electronico:</strong></p>
+            <%= @user.email %>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Rol usuario:</strong></p>
+            <% if @user.has_role? :admin %>
+              <span class="btn btn-outline-primary btn-sm">Administrador</span>
+            <% elsif @user.has_role? :editor %>
+              <span class="btn btn-outline-success btn-sm">Editor</span>
+            <% else %>
+              <span class="btn btn-outline-info btn-sm">Usuario</span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <%= link_to 'Editar usuario', edit_user_path(@user), class: 'btn btn-primary btn-sm' %>
+        <%= link_to 'Cancelar', users_path, class: 'btn btn-secondary btn-sm' %> 
+      </div>
+    </div>
+  </div>
+</div>
