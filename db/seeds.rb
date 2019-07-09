@@ -14,18 +14,5 @@
 #  end
 #end
 
-Bank.create!(name: 'Banco Estado', user_id: 1)
-Bank.create!(name: 'Banco Santander', user_id: 1)
-Bank.create!(name: 'Banco Corpbanca', user_id: 1)
-Bank.create!(name: 'Banco Falabella', user_id: 1)
-Bank.create!(name: 'Banco de Chile', user_id: 1)
-Bank.create!(name: 'Banco BICE', user_id: 1)
-Bank.create!(name: 'Banco Scotiabank', user_id: 1)
-Bank.create!(name: 'Banco Internacional', user_id: 1)
-Bank.create!(name: 'Banco ITAU', user_id: 1)
-Bank.create!(name: 'Banco Security', user_id: 1)
-Bank.create!(name: 'Banco Proaval', user_id: 1)
-Bank.create!(name: 'Banco Credito e Inversiones', user_id: 1)
-Bank.create!(name: 'Banco HDI', user_id: 1)
-Bank.create!(name: 'Banco Consorcio', user_id: 1)
-Bank.create!(name: 'Banco First Aval', user_id: 1)
+Role.create!(name: "admin")
+Role.create!(name: "editor")
