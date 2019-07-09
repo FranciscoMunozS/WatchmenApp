@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  #load_and_authorize_resource
-
+  load_and_authorize_resource
   def index
-    @users = User.where.not(:id => current_user.id)
+    @users = User.all
   end
 
   def show
