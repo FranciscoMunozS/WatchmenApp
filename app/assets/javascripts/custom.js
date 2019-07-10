@@ -93,22 +93,14 @@ $( document ).on('turbolinks:load', function() {
 $( document ).on('turbolinks:load', function() {
   $("#ticket_provider_id").select2({
     theme: "bootstrap",
-    language: "es"
+    language: "es",
+    width: '100%'
   });
 
   $("#ticket_bank_id").select2({
     theme: "bootstrap",
-    language: "es"
-  });
-
-  $("#ticket_state_id").select2({
-    theme: "bootstrap",
-    language: "es"
-  });
-
-  $("#ticket_document_id").select2({
-    theme: "bootstrap",
-    language: "es"
+    language: "es",
+    width: '100%'
   });
 });
 
