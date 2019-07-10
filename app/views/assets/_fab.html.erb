@@ -4,6 +4,9 @@
 	<div class="adminButtons">
 		<a href="/tickets/new" title="Agregar boleta"><i class="fas fa-receipt"></i></a>
 		<a href="/providers/new" title="Agregar proveedor"><i class="fas fa-users"></i></a>
-		<a href="/banks/new" title="Agregar Banco"><i class="fas fa-university"></i></a>
+		<a href="/banks/new" title="Agregar banco"><i class="fas fa-university"></i></a>
+		<% if current_user.has_role? :admin %>
+			<a href="/users/new" title="Agregar usuario"><i class="fas fa-user"></i></a>
+		<% end %>
 	</div>
 </div>
