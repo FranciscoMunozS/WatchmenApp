@@ -26,7 +26,9 @@
         <div class="container-fluid">
           <%= render 'assets/alert' %>
           <%= yield %>
-          <%= render 'assets/fab' %>
+          <% if user_signed_in? %>
+            <%= render 'assets/fab' %>
+          <% end %>
         </div>
       </div>
     </div>
