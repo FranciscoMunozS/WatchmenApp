@@ -31,6 +31,7 @@ $( document ).on('turbolinks:load', function() {
 $( document ).on('turbolinks:load', function() {
   $("table[role='datatable']").each(function(){
     $(this).DataTable({
+      responsive: true,
       processing: true,
       serverSide: true,
       ajax: $(this).data('url'),
