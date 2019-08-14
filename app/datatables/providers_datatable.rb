@@ -12,7 +12,7 @@ class ProvidersDatatable < ApplicationDatatable
         links = []
         links << link_to('Ver', provider, class: 'btn btn-primary btn-sm')
         links << link_to('Editar', edit_provider_path(provider), class: 'btn btn-success btn-sm')
-        links << link_to('Eliminar', provider, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm')
+        links << link_to('Eliminar', provider, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-danger btn-sm')
         column << links.join(' ')
       end
     end

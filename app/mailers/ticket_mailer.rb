@@ -3,12 +3,12 @@ class TicketMailer < ApplicationMailer
 
   def ticket_mailer(user)
     @user = user
-    @tickets = Ticket.all
+    @tickets = Ticket.where("DATE(first_notification) = ?", Date.today)
 
     attachments.inline["mail_box.png"] = File.read("#{Rails.root}/app/assets/images/mail_box.png")
     @tickets.each do |s|
       @user = s
-      mail(to: ['ccardenas@goredelosrios.cl', 'fmunoz@goredelosrios.cl'], subject: 'Notificación mensual')
+      mail(to: ['ccardenas@goredelosrios.cl', 'cperez@goredelosrios.cl', s.analist.downcase], subject: 'Notificación mensual')
     end
   end
 end

@@ -12,7 +12,7 @@
   </div>
 
   <div class="card-body">
-    <table class="table table-bordered text-center" id="dttb">
+    <%= content_tag :table, role: :datatable, data: { url: tickets_path(format: :json) }, class: 'table table-sm table-bordered text-center' do %>
       <thead>
         <tr>
           <th>Numero correlativo</th>
@@ -20,45 +20,12 @@
           <th>Numero garantia</th>
           <th>Proyecto</th>
           <th>Codigo BIP</th>
-          <th>Oficio despacho</th>
           <th>Analista</th>
           <th>Opciones</th>
         </tr>
       </thead>
-
       <tbody>
-        <% @tickets.each do |ticket| %>
-          <tr>
-            <td><%= ticket.correlative %></td>
-            <td><%= ticket.memo %></td>
-            <td><%= ticket.ticket_number %></td>
-            <td><%= ticket.project_name %></td>
-            <td><%= ticket.bip %></td>
-            <td><%= ticket.departed_office %></td>
-            <td><%= ticket.analist %></td>
-            <td>
-              <%= link_to ticket, class: 'btn btn-primary btn-sm' do %>
-                <% icon('fas', 'eye') %>
-              <% end %>
-              <% if current_user.id == ticket.user_id %>
-                <%= link_to edit_ticket_path(ticket), class: 'btn btn-success btn-sm' do %>
-                  <% icon('fas', 'edit') %>
-                <% end %>
-                <%= link_to ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do %>
-                  <% icon('fas', 'trash-alt') %>
-                <% end %>
-              <% elsif current_user.admin? %>
-                <%= link_to edit_ticket_path(ticket), class: 'btn btn-success btn-sm' do %>
-                  <% icon('fas', 'edit') %>
-                <% end %>
-                <%= link_to ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do %>
-                  <% icon('fas', 'trash-alt') %>
-                <% end %>
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
       </tbody>
-    </table>
+    <% end %>
   </div>
 </div>

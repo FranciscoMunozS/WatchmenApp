@@ -1,36 +1,7 @@
 $( document ).on('turbolinks:load', function() {
-  $("#dttb").dataTable({
-    language: {
-      "sProcessing":    "Procesando...",
-      "sLengthMenu":    "Mostrar _MENU_ registros",
-      "sZeroRecords":   "No se encontraron resultados",
-      "sEmptyTable":    "Ningún dato disponible en esta tabla",
-      "sInfo":          "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-      "sInfoEmpty":     "Mostrando registros del 0 al 0 de un total de 0 registros",
-      "sInfoFiltered":  "(filtrado de un total de _MAX_ registros)",
-      "sInfoPostFix":   "",
-      "sSearch":        "Buscar:",
-      "sUrl":           "",
-      "sInfoThousands":  ",",
-      "sLoadingRecords": "Cargando...",
-      "oPaginate": {
-          "sFirst":    "Primero",
-          "sLast":    "Último",
-          "sNext":    "Siguiente",
-          "sPrevious": "Anterior"
-      },
-      "oAria": {
-          "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-          "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-      }
-    }
-  });
-});
-
-
-$( document ).on('turbolinks:load', function() {
   $("table[role='datatable']").each(function(){
     $(this).DataTable({
+      "order": [[ 0, "desc" ]],
       responsive: true,
       processing: true,
       serverSide: true,
@@ -62,6 +33,18 @@ $( document ).on('turbolinks:load', function() {
     });
   });
 })
+
+$(function () {
+  $("#ticket_ticket_type").change(function () {
+    var ticket_type = $(this).val();
+    if (ticket_type != "VALE_VISTA") {
+      document.getElementById("ticket_due_date").disabled = false;
+    }
+    else {
+      document.getElementById("ticket_due_date").disabled = true;
+    }
+  });
+});
 
 $( document ).on('turbolinks:load', function() {
   $('.datepicker').datepicker({
@@ -153,4 +136,4 @@ $( document ).on('turbolinks:load', function() {
     e.preventDefault();
   });
 
-})(jQuery); // End of use strict
+});// End of use strict

@@ -73,7 +73,7 @@
       </div>
       <div class="card-body">
         <div class="chart-area">
-          <%= column_chart Ticket.group_by_week(:created_at).count, width: "1024px", height: "320px", messages: {empty: "Sin datos"} %>
+          <%= column_chart Ticket.group_by_year(:due_date).count, width: "1024px", height: "320px", messages: {empty: "Sin datos"} %>
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@
       </div>
 
       <div class="card-body">
-        <table class="table table-bordered text-center" id="dttb">
+        <%= content_tag :table, role: :datatable, data: { url: tickets_path(format: :json) }, class: 'table table-sm table-bordered text-center' do %>
           <thead>
             <tr>
               <th>Numero correlativo</th>
@@ -107,31 +107,13 @@
               <th>Numero garantia</th>
               <th>Proyecto</th>
               <th>Codigo BIP</th>
-              <th>Oficio despacho</th>
               <th>Analista</th>
               <th>Opciones</th>
             </tr>
           </thead>
-
           <tbody>
-            <% @tickets.each do |ticket| %>
-              <tr>
-                <td><%= ticket.correlative %></td>
-                <td><%= ticket.memo %></td>
-                <td><%= ticket.ticket_number %></td>
-                <td><%= ticket.project_name %></td>
-                <td><%= ticket.bip %></td>
-                <td><%= ticket.departed_office %></td>
-                <td><%= ticket.analist %></td>
-                <td>
-                  <%= link_to ticket, class: 'btn btn-primary btn-sm' do %>
-                    <% icon('fas', 'eye') %>
-                  <% end %>
-                </td>
-              </tr>
-            <% end %>
           </tbody>
-        </table>
+        <% end %>
       </div>
     </div>
   </div>

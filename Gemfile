@@ -37,6 +37,7 @@ gem 'kaminari'
 gem 'auto_increment', '~> 1.5', '>= 1.5.1'
 gem 'cancancan'
 gem 'rolify'
+gem 'seed_dump'
 
 group :development, :test do
   gem 'figaro', '~> 1.1', '>= 1.1.1'

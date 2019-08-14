@@ -43,15 +43,13 @@
 
               <tbody style="text-align: center">
                 <% @tickets.each do |ticket| %>
-                  <% if ticket.first_notification.month == Date.today.month %>
-                    <tr>
-                      <td><%= ticket.correlative %></td>
-                      <td><%= ticket.ticket_number %></td>
-                      <td><%= ticket.due_date %></td>
-                      <td><%= ticket.first_notification %></td>
-                      <td><%= ticket.analist %></td>
-                    </tr>
-                  <% end %>
+                  <tr>
+                    <td><%= ticket.correlative %></td>
+                    <td><%= ticket.ticket_number %></td>
+                    <td><%= ticket.due_date %></td>
+                    <td><%= ticket.first_notification %></td>
+                    <td><%= ticket.analist.downcase %></td>
+                  </tr>
                 <% end %>
               </tbody>
             </table>
