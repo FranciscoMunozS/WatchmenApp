@@ -34,7 +34,7 @@ $( document ).on('turbolinks:load', function() {
   });
 })
 
-$(function () {
+$(document).on('turbolinks:load', function () {
   $("#ticket_ticket_type").change(function () {
     var ticket_type = $(this).val();
     if (ticket_type != "VALE_VISTA") {
