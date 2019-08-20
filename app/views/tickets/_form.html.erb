@@ -4,17 +4,10 @@
 
   <div class="form-inputs">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <%= f.association :provider, include_blank: false %>
-        <%= link_to 'Agregar proveedor', new_provider_path, class: 'btn btn-primary btn-sm' %>
-      </div>
-      <div class="col-md-6">
-        <%= f.association :bank, include_blank: false %>
-        <%= link_to 'Agregar banco', new_bank_path, class: 'btn btn-danger btn-sm' %>
       </div>
     </div>
-    <hr>
-    <%= f.input :correlative, as: :string, disabled: true %>
     <div class="row">
       <div class="col-md-8">
         <%= f.input :memo, as: :string %>
@@ -35,8 +28,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8">
-        <%= f.input :amount, as: :string %>
+      <div class="col-md-4">
+        <%= f.association :bank, include_blank: false %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :amount, as: :currency %>
       </div>
       <div class="col-md-4">
         <%= f.input :currency %>
