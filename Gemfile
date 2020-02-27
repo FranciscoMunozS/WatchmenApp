@@ -15,7 +15,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'simple_form', '~> 4.1'
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
-gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'devise', '~> 4.7'
 gem 'font-awesome-sass', '~> 5.8', '>= 5.8.1'
 gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 gem 'bootstrap-datepicker-rails', '~> 1.8', '>= 1.8.0.1'
